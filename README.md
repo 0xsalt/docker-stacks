@@ -1,4 +1,4 @@
-# Docker Stacks: A Docker Compose Orchestration Repo
+# Docker Stacks: Docker Compose Orchestration
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Docker Compose](https://img.shields.io/badge/docker%20compose-2496ED?style=flat&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
