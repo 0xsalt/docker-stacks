@@ -1,0 +1,3 @@
+# Stacks Directory
+This directory contains stack composition definitions.
+Each subdirectory represents a different application stack with its compose.yaml and .env files.

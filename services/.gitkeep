@@ -1,0 +1,3 @@
+# Services Directory
+This directory contains independent Git repositories for each service.
+Each service is cloned as a subdirectory here.

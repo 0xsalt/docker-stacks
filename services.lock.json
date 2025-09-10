@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Docker Stacks Service Lock File",
+  "description": "Tracks service versions and dependencies for reproducible builds",
+  "version": "1.0.0",
+  "lockfileVersion": 1,
+  "generatedAt": "2025-09-10T00:00:00.000Z",
+  "services": {},
+  "stacks": {},
+  "metadata": {
+    "dockerComposeVersion": "2.x",
+    "lastUpdated": "2025-09-10T00:00:00.000Z",
+    "updateHistory": []
+  }
+}

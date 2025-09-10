@@ -1,0 +1,24 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.1.0] - 2025-09-10
+
+### Added
+
+- Project directory structure with services/, stacks/, scripts/, and docs/ directories
+- Makefile commands for stack management (bootstrap, up, down, logs, clean, rebuild, shell)
+- Docker network management for multi-service communication
+- Bootstrap script with dependency validation and environment initialization
+- Service version tracking via services.lock.json lock file
+- Project documentation and comprehensive .gitignore configuration
+
+## [Unreleased]
+
+### Planned
+- Configuration validation system
+- Discord LLM bot service integration
+- End-to-end testing framework

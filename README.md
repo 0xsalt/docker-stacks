@@ -21,18 +21,78 @@ Docker Stacks is a Docker Compose orchestration repository designed to provide a
 
 ```
 docker-stacks/
-├── .gitignore
-├── Makefile
-├── scripts/
-│   └── bootstrap.sh
-├── services/
-│   ├── discord-llm-bot/
-│   ├── next-docker-app/
-│   └── other-services/
-├── stacks/
-│   ├── stack_discord-llm-bot/
-│   │   ├── compose.yaml
-│   │   └── .env
-└── services.lock.json
+├── .git/                    # Git repository metadata
+├── .gitignore              # Git ignore patterns
+├── .prjroot                # Project root marker
+├── .bmad-core/             # BMad Method infrastructure
+├── Makefile                # Build and operation commands
+├── docs/                   # Project documentation
+│   ├── architecture/       # Architecture specifications
+│   ├── epics/             # Epic definitions
+│   └── stories/           # User story definitions
+├── scripts/                # Utility and management scripts
+│   └── bootstrap.sh       # Repository setup script
+├── services/               # Independent service repositories
+│   ├── discord-llm-bot/   # Discord LLM bot service
+│   ├── next-docker-app/   # Next.js application service
+│   └── other-services/    # Additional services
+├── stacks/                 # Stack composition definitions
+│   ├── stack_discord-llm-bot/  # Discord bot stack
+│   │   ├── compose.yaml    # Docker Compose configuration
+│   │   └── .env           # Environment variables
+│   ├── stack_new-project/ # New project stack
+│   │   ├── compose.yaml   # Docker Compose configuration
+│   │   └── .env          # Environment variables
+│   └── other-stacks/     # Additional stack configurations
+└── services.lock.json    # Service dependency lock file
 ```
 
+## Directory Structure
+
+### Core Directories
+
+- **`services/`**: Contains cloned Git repositories for each independent service. Each service is developed and versioned separately.
+- **`stacks/`**: Contains stack composition definitions using Docker Compose. Each stack directory includes compose.yaml and environment files.
+- **`scripts/`**: Houses utility scripts for repository management, bootstrapping, and operational tasks.
+- **`.bmad-core/`**: BMad Method infrastructure for development workflow and tooling.
+
+### Configuration Files
+
+- **`.prjroot`**: Marks the project root for tooling and scripts
+- **`.gitignore`**: Configured to ignore sensitive files while preserving repository structure
+- **`Makefile`**: Provides standardized commands for stack operations
+- **`services.lock.json`**: Tracks service versions and dependencies
+
+## Getting Started
+
+1. Clone the repository
+2. Run the bootstrap script: `scripts/bootstrap.sh`
+3. Use `make` commands for stack operations
+4. Refer to individual stack documentation in `stacks/` directories
+
+## Makefile Commands
+
+The repository includes a Makefile with the following commands:
+
+- `make help` - Display available commands and usage
+- `make bootstrap` - Initialize the development environment
+- `make up STACK=stack-name` - Start the specified Docker stack
+- `make down STACK=stack-name` - Stop the specified Docker stack
+- `make logs STACK=stack-name` - View logs for the specified stack
+- `make clean` - Clean up Docker resources
+
+Example usage:
+
+```bash
+make bootstrap
+make up STACK=stack_discord-llm-bot
+make logs STACK=stack_discord-llm-bot
+make down STACK=stack_discord-llm-bot
+make clean
+```
+
+## Architecture
+
+For detailed architecture information, see:
+- `docs/architecture/source-tree.md` - Complete source tree specification
+- `docs/architecture/` - Additional architectural documentation
