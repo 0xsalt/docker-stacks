@@ -1,5 +1,15 @@
 # Docker Stacks: A Docker Compose Orchestration Repo
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Release](https://img.shields.io/github/v/release/0xsalt/docker-stacks)](https://github.com/0xsalt/docker-stacks/releases)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Docker Compose](https://img.shields.io/badge/docker%20compose-2496ED?style=flat&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
+[![BMad Method](https://img.shields.io/badge/workflow-BMad%20Method-blue)](https://github.com/0xsalt/docker-stacks/tree/main/.bmad-core)
+[![Keep a Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.1.0-orange)](./CHANGELOG)
+[![Semantic Versioning](https://img.shields.io/badge/semver-2.0.0-green)](https://semver.org/)
+[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/0xsalt/docker-stacks/graphs/commit-activity)
+[![GitHub Issues](https://img.shields.io/github/issues/0xsalt/docker-stacks)](https://github.com/0xsalt/docker-stacks/issues)
+
 ## Overview
 
 Docker Stacks is a Docker Compose orchestration repository designed to provide a flexible and developer-friendly control plane for a collection of AI-powered services. The project's core purpose is to 
