@@ -1,0 +1,9 @@
+CLAUDE.md
+.claude/
+.env
+docs/brief.md
+docs/prd.md
+docs/architecture.md
+.prjroot
+.bmad-core/
+.kilocodemodes
