@@ -1,11 +1,8 @@
 # Docker Stacks: A Docker Compose Orchestration Repo
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/github/v/release/0xsalt/docker-stacks)](https://github.com/0xsalt/docker-stacks/releases)
 [![Docker Compose](https://img.shields.io/badge/docker%20compose-2496ED?style=flat&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 [![Changelog](https://img.shields.io/badge/changelog-v0.1.1-blue)](./CHANGELOG)
-[![Semantic Versioning](https://img.shields.io/badge/semver-2.0.0-green)](https://semver.org/)
-[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/0xsalt/docker-stacks/graphs/commit-activity)
 [![GitHub Issues](https://img.shields.io/github/issues/0xsalt/docker-stacks)](https://github.com/0xsalt/docker-stacks/issues)
 
 ## Overview
