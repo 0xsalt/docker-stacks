@@ -7,13 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Planned
-- End-to-end testing framework
-- Multi-environment deployment support
-- Advanced monitoring and alerting
-- Performance optimization features
-- Full hot-reload implementation (Epic N+1)
-- Optimized context loading expansions (Epic 3)
+### Planned 
+- Local FIFO message memory cache for fast retrieval (update on events, fallback to Discord)
+- Thread-aware context loading (default current thread, expand on request/need)
+- Streaming responses for better UX
+- Image and text attachment processing
+- Advanced logging with full context
+- Configuration validation for new features
+- Error handling for attachments and memory
+- Performance tests for cache and retrieval
 
 ## [0.3.0] - 2025-09-11
 
