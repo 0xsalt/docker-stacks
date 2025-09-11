@@ -1,0 +1,36 @@
+# Development dependencies for docker-stacks project
+# These are installed in a virtual environment to avoid polluting system Python
+
+# YAML validation and configuration
+pyyaml==6.0.1
+
+# Development tools
+black==24.3.0
+isort==5.13.2
+flake8==7.0.0
+
+# Testing framework
+pytest==8.1.1
+pytest-cov==4.1.0
+pytest-asyncio==0.23.5
+pytest-mock==3.12.0
+
+# Mocking and fixtures
+responses==0.24.1
+freezegun==1.2.2
+
+# Performance testing
+pytest-benchmark==4.0.0
+
+# Discord API mocking
+discord.py-stubs==1.7.3
+
+# Additional testing utilities
+faker==22.5.0
+hypothesis==6.92.1
+
+# Documentation
+mkdocs==1.5.3
+
+# Pre-commit hooks (optional)
+pre-commit==3.7.0

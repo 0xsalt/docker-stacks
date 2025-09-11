@@ -1,9 +1,9 @@
-.PHONY: help bootstrap up down logs networks rebuild shell lock-update health clean
+.PHONY: help bootstrap up down logs networks rebuild shell lock-update health status clean validate test test-unit test-integration test-performance test-error test-coverage
 
 help:
 	@echo "Available commands:"
 	@echo "  make help          - Show this help message"
-	@echo "  make bootstrap     - Initialize development environment"
+	@echo "  make bootstrap     - Initialize development environment (creates .venv)"
 	@echo "  make up STACK=name - Start the specified Docker stack"
 	@echo "  make down STACK=name - Stop the specified Docker stack"
 	@echo "  make logs STACK=name - View logs for the specified stack"
@@ -12,7 +12,21 @@ help:
 	@echo "  make networks      - List and inspect Docker networks"
 	@echo "  make lock-update STACK=name [SERVICE=name] - Update service lock file"
 	@echo "  make health STACK=name - Check service health status"
+	@echo "  make status STACK=name - Show stack service status (alias for health)"
+	@echo "  make validate STACK=name - Validate stack configuration"
 	@echo "  make clean         - Clean up Docker resources"
+	@echo ""
+	@echo "Testing Commands:"
+	@echo "  make test              - Run all automated tests"
+	@echo "  make test-unit         - Run unit tests (Discord API interactions)"
+	@echo "  make test-integration  - Run integration tests (Docker secrets)"
+	@echo "  make test-performance  - Run performance tests (context sizes)"
+	@echo "  make test-error        - Run error scenario tests"
+	@echo "  make test-coverage     - Run tests with coverage reporting"
+	@echo ""
+	@echo "Development Setup:"
+	@echo "  source .venv/bin/activate  # Activate Python virtual environment"
+	@echo "  deactivate                 # Deactivate virtual environment"
 	@echo ""
 	@echo "Example usage:"
 	@echo "  make bootstrap"
@@ -24,6 +38,8 @@ help:
 	@echo "  make lock-update STACK=stack_discord-llm-bot"
 	@echo "  make health STACK=stack_discord-llm-bot"
 	@echo "  make down STACK=stack_discord-llm-bot"
+	@echo "  make test"
+	@echo "  make test-unit"
 
 bootstrap:
 	@echo "Initializing development environment..."
@@ -47,6 +63,8 @@ up:
 		echo "Error: compose.yaml not found in stacks/$(STACK)/"; \
 		exit 1; \
 	fi
+	@echo "Validating stack $(STACK) configuration..."
+	@bash scripts/validate.sh $(STACK) || exit 1
 	@echo "Starting stack $(STACK)..."
 	@cd stacks/$(STACK) && docker compose --project-name docker-stacks_$(STACK) up -d --build
 	@echo "Updating service lock file..."
@@ -179,3 +197,54 @@ clean:
 	@docker network prune -f
 	@docker volume prune -f
 	@echo "✓ Docker cleanup completed"
+
+validate:
+	@if [ -z "$(STACK)" ]; then \
+		echo "Error: STACK parameter is required"; \
+		echo "Usage: make validate STACK=stack-name"; \
+		exit 1; \
+	fi
+	@bash scripts/validate.sh $(STACK)
+
+# Testing targets
+test:
+	@echo "Running all automated tests..."
+	@python scripts/run_tests.py all
+
+test-unit:
+	@echo "Running unit tests (Discord API interactions)..."
+	@python scripts/run_tests.py unit
+
+test-integration:
+	@echo "Running integration tests (Docker secrets loading)..."
+	@python scripts/run_tests.py integration
+
+test-performance:
+	@echo "Running performance tests (context sizes)..."
+	@python scripts/run_tests.py performance
+
+test-error:
+	@echo "Running error scenario tests..."
+	@python scripts/run_tests.py error
+
+test-coverage:
+	@echo "Running tests with coverage reporting..."
+	@python scripts/run_tests.py coverage
+
+# Status command (alias for health)
+status:
+	@if [ -z "$(STACK)" ]; then \
+		echo "Error: STACK parameter is required"; \
+		echo "Usage: make status STACK=stack-name"; \
+		exit 1; \
+	fi
+	@if [ ! -d "stacks/$(STACK)" ]; then \
+		echo "Error: Stack 'stacks/$(STACK)' does not exist"; \
+		exit 1; \
+	fi
+	@if [ ! -f "stacks/$(STACK)/compose.yaml" ]; then \
+		echo "Error: compose.yaml not found in stacks/$(STACK)/"; \
+		exit 1; \
+	fi
+	@echo "Checking status of services in stack $(STACK)..."
+	@cd stacks/$(STACK) && docker compose --project-name docker-stacks_$(STACK) ps --format "table {{.Name}}\t{{.Status}}\t{{.Ports}}"

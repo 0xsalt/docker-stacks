@@ -1,3 +1,25 @@
+# Service repositories (independent Git repos)
+services/
+
+# Environment files
+*.env
+.env
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
 CLAUDE.md
 .claude/
 .env
@@ -19,3 +41,9 @@ linear-config.json
 .bmad-core/
 .gitignore.dev
 .gitignore.push
+services/discord-llm-bot/config.yaml
+stacks/stack_discord-llm-bot/secrets/
+tests/
+stacks/test-stack/
+pytest.ini
+linear-config.json

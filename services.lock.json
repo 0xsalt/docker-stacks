@@ -5,11 +5,105 @@
   "version": "1.0.0",
   "lockfileVersion": 1,
   "generatedAt": "2025-09-10T00:00:00.000Z",
-  "services": {},
-  "stacks": {},
+  "services": {
+    "discord-llm-bot": {
+      "name": "discord-llm-bot",
+      "repository": "https://github.com/0xsalt/discord-llm-bot",
+      "commitHash": "2cff94b9b3d5c14b517f01d8674bb953317ca316",
+      "branch": "main",
+      "tag": "none",
+      "lastUpdated": "2025-09-11T01:56:03.885Z"
+    }
+  },
+  "stacks": {
+    "stack_discord-llm-bot": {
+      "services": {
+        "discord-llm-bot": "2cff94b9b3d5c14b517f01d8674bb953317ca316"
+      },
+      "lastUpdated": "2025-09-11T01:56:03.885Z",
+      "composeFile": "stacks/stack_discord-llm-bot/compose.yaml"
+    }
+  },
   "metadata": {
     "dockerComposeVersion": "2.x",
-    "lastUpdated": "2025-09-10T00:00:00.000Z",
-    "updateHistory": []
+    "lastUpdated": "2025-09-11T01:56:03.885Z",
+    "updateHistory": [
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T20:41:39.254Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T20:53:56.465Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T22:22:03.848Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T22:24:23.398Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T22:26:50.877Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T22:31:13.000Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T22:33:29.719Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T22:42:12.812Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T22:46:47.725Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T22:54:49.211Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T23:02:24.425Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-10T23:10:39.708Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-11T00:19:20.387Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-11T01:06:25.151Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-11T01:34:28.955Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-11T01:34:38.780Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-11T01:40:10.761Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-11T01:45:05.622Z"
+      },
+      {
+        "stack": "stack_discord-llm-bot",
+        "timestamp": "2025-09-11T01:56:03.885Z"
+      }
+    ]
   }
 }

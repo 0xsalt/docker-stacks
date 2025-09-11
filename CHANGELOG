@@ -5,6 +5,55 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Planned
+- End-to-end testing framework
+- Multi-environment deployment support
+- Advanced monitoring and alerting
+- Performance optimization features
+- Full hot-reload implementation (Epic N+1)
+- Optimized context loading expansions (Epic 3)
+
+## [0.3.0] - 2025-09-11
+
+### Delivered
+- Story DS-2.2A: Stack Operations complete, including DS-2.2A.1 Core Bot Interactions and DS-2.2A.2 Enhanced Features
+- Core Discord bot functionality with slash commands, permissions, basic hot-reload, and memory enhancements
+- Secure configuration with Docker secrets consolidation
+- Comprehensive testing strategy and DoD for MVP delivery
+
+### Added
+- Thread-aware context loading and local FIFO memory cache (DS-2.2A.2)
+- Enhanced acceptance criteria for advanced features
+
+### Fixed
+- Config.yaml secrets removed (placeholders only, loaded from Docker secrets)
+- Changelog consolidation and version management
+
+## [0.2.0] - 2025-09-10
+
+### Added
+- Docker secrets for credential management
+- Credential masking in logs
+- Read-only volume mounts and container security options
+- Discord bot service integration with health checks and YAML configuration
+- Docker Compose setup for bot stack with resource limits
+- Structured logging with JSON/text formats and rotation
+- Configuration validation with runtime and standalone tools
+- Graceful shutdown with signal handling and task cancellation
+- Comprehensive README and security documentation
+
+### Changed
+- Version bump from 0.1.1 to 0.2.0
+- Migrated credentials to Docker secrets
+- Enhanced health check logic for secrets validation
+
+### Security
+- All sensitive data stored in Docker secrets
+- Automatic log masking for credentials
+- Container hardening with read-only filesystem and no-new-privileges
+
 ## [0.1.1] - 2025-09-10
 
 ### Added
@@ -23,10 +72,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bootstrap script with dependency validation and environment initialization
 - Service version tracking via services.lock.json lock file
 - Project documentation and comprehensive .gitignore configuration
-
-## [Unreleased]
-
-### Planned
-- Configuration validation system
-- Discord LLM bot service integration
-- End-to-end testing framework
